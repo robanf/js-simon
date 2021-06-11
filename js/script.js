@@ -1,6 +1,6 @@
 var cronometro=30;
 var clock;
-var array=[1,2,3,4,5];
+var array=numrandom();
 var newarray=[];
 
 document.getElementById("array").innerHTML=array;
@@ -30,9 +30,11 @@ function inserisci(x){
             document.getElementById("mynum").innerHTML=x;
         }else{
             document.getElementById("punteggio").innerHTML="hai perso :(";
+            document.getElementById("array").className="show";
             return false;
         }
     }
+    document.getElementById("array").className="show";
     return true;
 }
 
@@ -45,4 +47,10 @@ function trova(num,array){
     return false;
 }
 
-
+function numrandom(){
+    var y=[];
+    for(var j=0;j<5;j++){
+        y.push(Math.floor(Math.random()*100+1))
+    }
+    return y;
+}
